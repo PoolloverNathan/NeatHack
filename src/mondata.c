@@ -413,6 +413,7 @@ can_be_strangled(struct monst* mon)
        who don't need to breathe (brain, if any, doesn't care).
        Mindless creatures who do need to breath are vulnerable, as
        are non-breathing creatures which have higher brain function. */
+#if 0
     if (!has_head(mon->data))
         return FALSE;
     if (mon == &g.youmonst) {
@@ -420,6 +421,7 @@ can_be_strangled(struct monst* mon)
            confer strangulation protection */
         nobrainer = mindless(g.youmonst.data);
         nonbreathing = Breathless;
+#endif
     } else {
         nobrainer = mindless(mon->data);
         /* monsters don't wear amulets of magical breathing,
