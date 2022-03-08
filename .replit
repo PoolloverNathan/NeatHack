@@ -1,0 +1,2 @@
+language = "c"
+run = "make all -k && clear && $(find -name nethack)"

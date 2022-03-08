@@ -421,15 +421,17 @@ can_be_strangled(struct monst* mon)
            confer strangulation protection */
         nobrainer = mindless(g.youmonst.data);
         nonbreathing = Breathless;
-#endif
     } else {
+#endif
         nobrainer = mindless(mon->data);
         /* monsters don't wear amulets of magical breathing,
            so second part doesn't achieve anything useful... */
         nonbreathing = (breathless(mon->data)
                         || ((mamul = which_armor(mon, W_AMUL)) != 0
                             && (mamul->otyp == AMULET_OF_MAGICAL_BREATHING)));
+#if 0
     }
+#endif
     return (boolean) (!nobrainer || !nonbreathing);
 }
 
